@@ -1,5 +1,4 @@
 tag @s add mh2PUSH
-execute in minecraft:overworld run summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["mh2HomeNew","mh2Home"],Duration:2147483645}
 execute as @e[tag=mh2Home,tag=!mh2HomeNew] if score @p[tag=mh2PUSH] mh2PID = @s mh2IDh if score @p[tag=mh2PUSH] sethome = @s mh2Nh run kill @s
 execute store result score @e[tag=mh2HomeNew,limit=1,sort=nearest] mh2Xh run data get entity @s Pos[0]
 execute store result score @e[tag=mh2HomeNew,limit=1,sort=nearest] mh2Yh run data get entity @s Pos[1]

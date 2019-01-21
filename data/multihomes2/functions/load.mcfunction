@@ -26,4 +26,8 @@ scoreboard objectives add mh2fakedelhome trigger
 scoreboard objectives add mh2fakelisthomes trigger
 
 
+scoreboard players set verM mh2Nums 2
+scoreboard players set verS1 mh2Nums 1
+scoreboard players set verS2 mh2Nums 1
+
 

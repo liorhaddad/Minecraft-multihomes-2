@@ -50,6 +50,7 @@ execute as @a[tag=mh2.admin] at @s unless score @s mh2fakelimit matches 0 run sc
 
 
 
+function mh2upgradeutil:tick
 
 function multihomes2:remperms
 function multihomes2:config/permissions
