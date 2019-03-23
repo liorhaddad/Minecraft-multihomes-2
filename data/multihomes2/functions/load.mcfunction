@@ -12,6 +12,18 @@ scoreboard objectives add mh2Dp dummy
 scoreboard objectives add mh2Dp dummy
 scoreboard objectives add mh2HLt dummy
 scoreboard objectives add mh2PIDt dummy
+scoreboard objectives add mh2moveX dummy
+scoreboard objectives add mh2moveY dummy
+scoreboard objectives add mh2moveZ dummy
+scoreboard objectives add mh2moveXp dummy
+scoreboard objectives add mh2moveYp dummy
+scoreboard objectives add mh2moveZp dummy
+scoreboard objectives add mh2tpdelay dummy
+scoreboard objectives add mh2tpdelayC dummy
+scoreboard objectives add mh2tpdelayD dummy
+scoreboard objectives add mh2tpdelayCD dummy
+scoreboard objectives add mh2tpdelayCD2 dummy
+scoreboard objectives add mh2homedt dummy
 
 scoreboard objectives add sethome trigger
 scoreboard objectives add home trigger
@@ -28,6 +40,8 @@ scoreboard objectives add mh2fakelisthomes trigger
 
 scoreboard players set verM mh2Nums 2
 scoreboard players set verS1 mh2Nums 1
-scoreboard players set verS2 mh2Nums 1
+scoreboard players set verS2 mh2Nums 2
+
+scoreboard players set 20 mh2Nums 20
 
 

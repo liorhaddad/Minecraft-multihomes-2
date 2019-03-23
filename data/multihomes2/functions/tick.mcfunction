@@ -1,6 +1,14 @@
 scoreboard players add @a mh2PID 0
 execute as @a[scores={mh2PID=..0}] at @s run function multihomes2:getnewpid
 
+execute as @a at @s store result score @s mh2moveX run data get entity @s Pos[0]
+execute as @a at @s store result score @s mh2moveY run data get entity @s Pos[1]
+execute as @a at @s store result score @s mh2moveZ run data get entity @s Pos[2]
+tag @a[tag=mh2move] remove mh2move
+execute as @a at @s unless score @s mh2moveX = @s mh2moveXp run tag @a add mh2move
+execute as @a at @s unless score @s mh2moveY = @s mh2moveYp run tag @a add mh2move
+execute as @a at @s unless score @s mh2moveZ = @s mh2moveZp run tag @a add mh2move
+
 execute as @a[scores={sethome=1..}] at @s if score @s sethome > @s mh2HL unless score @s mh2HL matches ..-1 run tellraw @s [{"text":"","color":"red"},"Home limit is ",{"score":{"name":"@s","objective":"mh2HL"}}]
 execute as @a[scores={sethome=1..}] at @s if score @s sethome > @s mh2HL unless score @s mh2HL matches ..-1 run scoreboard players reset @s sethome
 execute as @a[scores={home=1..}] at @s if score @s home > @s mh2HL unless score @s mh2HL matches ..-1 run tellraw @s [{"text":"","color":"red"},"Home limit is ",{"score":{"name":"@s","objective":"mh2HL"}}]
@@ -9,7 +17,9 @@ execute as @a[scores={delhome=1..}] at @s if score @s delhome > @s mh2HL unless 
 execute as @a[scores={delhome=1..}] at @s if score @s delhome > @s mh2HL unless score @s mh2HL matches ..-1 run scoreboard players reset @s delhome
 
 execute as @a[scores={sethome=1..}] run function multihomes2:sethome
-execute as @a[scores={home=1..}] at @s run function multihomes2:home
+execute as @a[scores={home=1..}] at @s unless score @s mh2tpdelay matches ..0 run function multihomes2:homedelay
+execute as @a[scores={home=1..}] at @s if score @s mh2tpdelay matches ..0 run function multihomes2:home
+execute as @a[scores={mh2tpdelayC=1..}] at @s run function multihomes2:homedelaytick
 execute as @a[scores={delhome=1..}] at @s run function multihomes2:delhome
 execute as @a[scores={listhomes=1..}] at @s run function multihomes2:listhomes
 
@@ -48,6 +58,9 @@ execute as @a[tag=mh2.admin] at @s unless score @s mh2fakelimit matches 0 run sc
 execute as @a[tag=mh2.admin] at @s unless score @s mh2fakelimit matches 0 run scoreboard players enable @s mh2fakedelhome
 execute as @a[tag=mh2.admin] at @s unless score @s mh2fakelimit matches 0 run scoreboard players enable @s mh2fakelisthomes
 
+execute as @a at @s store result score @s mh2moveXp run data get entity @s Pos[0]
+execute as @a at @s store result score @s mh2moveYp run data get entity @s Pos[1]
+execute as @a at @s store result score @s mh2moveZp run data get entity @s Pos[2]
 
 
 function mh2upgradeutil:tick

@@ -11,6 +11,9 @@
 # Home limit, can be different for each player. Default is 5
 scoreboard players set @a mh2HL 5
 
+# Teleportation delay, can be different for each player. Default is 0
+scoreboard players set @a mh2tpdelay 0
+
 # Allow the player to teleport between dimensions. Default is true
 tag @a add mh2.multidimtp
 
