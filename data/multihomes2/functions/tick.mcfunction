@@ -5,9 +5,9 @@ execute as @a at @s store result score @s mh2moveX run data get entity @s Pos[0]
 execute as @a at @s store result score @s mh2moveY run data get entity @s Pos[1]
 execute as @a at @s store result score @s mh2moveZ run data get entity @s Pos[2]
 tag @a[tag=mh2move] remove mh2move
-execute as @a at @s unless score @s mh2moveX = @s mh2moveXp run tag @a add mh2move
-execute as @a at @s unless score @s mh2moveY = @s mh2moveYp run tag @a add mh2move
-execute as @a at @s unless score @s mh2moveZ = @s mh2moveZp run tag @a add mh2move
+execute as @a at @s unless score @s mh2moveX = @s mh2moveXp run tag @s add mh2move
+execute as @a at @s unless score @s mh2moveY = @s mh2moveYp run tag @s add mh2move
+execute as @a at @s unless score @s mh2moveZ = @s mh2moveZp run tag @s add mh2move
 
 execute as @a[scores={sethome=1..}] at @s if score @s sethome > @s mh2HL unless score @s mh2HL matches ..-1 run tellraw @s [{"text":"","color":"red"},"Home limit is ",{"score":{"name":"@s","objective":"mh2HL"}}]
 execute as @a[scores={sethome=1..}] at @s if score @s sethome > @s mh2HL unless score @s mh2HL matches ..-1 run scoreboard players reset @s sethome
